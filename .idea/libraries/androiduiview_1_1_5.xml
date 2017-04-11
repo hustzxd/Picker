@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="androiduiview-1.1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/1a464fed8f56c926cb82931901fd5d5dbe5d8d0d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/1a464fed8f56c926cb82931901fd5d5dbe5d8d0d/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.drakeet.uiview/androiduiview/1.1.5/7c3d23d0ed3c4922ae12d745c9f227e87b5e8b9d/androiduiview-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
