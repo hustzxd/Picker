@@ -18,11 +18,7 @@ public class Bean {
 
     @Override
     public String toString() {
-        return "Bean{" +
-                "x=" + x +
-                ", y=" + y +
-                ", z=" + z +
-                '}';
+        return x + ", " + y + ", " + z;
     }
 
     public float getX() {

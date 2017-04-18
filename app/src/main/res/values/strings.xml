@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Picker</string>
+    <string name="permission_record_rationale">rational</string>
 </resources>
