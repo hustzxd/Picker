@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this, mGyroscope, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     @Override
@@ -253,34 +253,34 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     public void onSensorChanged(SensorEvent event) {
         Sensor sensor = event.sensor;
         if (sensor.getType() == Sensor.TYPE_GYROSCOPE) {
-            Log.d("zzz-gyr", System.currentTimeMillis() + "");
+//            Log.d("zzz-gyr", System.currentTimeMillis() + "");
             float xValue = event.values[0];// Acceleration minus Gx on the x-axis
             float yValue = event.values[1];//Acceleration minus Gy on the y-axis
             float zValue = event.values[2];//Acceleration minus Gz on the z-axis
-            mTvGyr.setText(xValue + " " + yValue + " " + zValue);
+//            mTvGyr.setText(xValue + " " + yValue + " " + zValue);
             mGyrList.add(new Bean(xValue * 10000, yValue * 10000, zValue * 10000));
         } else if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 //            Log.d("linc", "value size: " + event.values.length);
-            Log.d("zzz-acc", System.currentTimeMillis() + "");
+//            Log.d("zzz-acc", System.currentTimeMillis() + "");
 
             float xValue = event.values[0];// Acceleration minus Gx on the x-axis
             float yValue = event.values[1];//Acceleration minus Gy on the y-axis
             float zValue = event.values[2];//Acceleration minus Gz on the z-axis
             mAccList.add(new Bean(xValue, yValue, zValue));
-            mTvAcc.setText("x轴： " + xValue + "  y轴： " + yValue + "  z轴： " + zValue);
-            if (xValue > SensorManager.STANDARD_GRAVITY) {
-                mTvAcc.append("\n重力指向设备左边");
-            } else if (xValue < -SensorManager.STANDARD_GRAVITY) {
-                mTvAcc.append("\n重力指向设备右边");
-            } else if (yValue > SensorManager.STANDARD_GRAVITY) {
-                mTvAcc.append("\n重力指向设备下边");
-            } else if (yValue < -SensorManager.STANDARD_GRAVITY) {
-                mTvAcc.append("\n重力指向设备上边");
-            } else if (zValue > SensorManager.STANDARD_GRAVITY) {
-                mTvAcc.append("\n屏幕朝上");
-            } else if (zValue < -SensorManager.STANDARD_GRAVITY) {
-                mTvAcc.append("\n屏幕朝下");
-            }
+//            mTvAcc.setText("x轴： " + xValue + "  y轴： " + yValue + "  z轴： " + zValue);
+//            if (xValue > SensorManager.STANDARD_GRAVITY) {
+//                mTvAcc.append("\n重力指向设备左边");
+//            } else if (xValue < -SensorManager.STANDARD_GRAVITY) {
+//                mTvAcc.append("\n重力指向设备右边");
+//            } else if (yValue > SensorManager.STANDARD_GRAVITY) {
+//                mTvAcc.append("\n重力指向设备下边");
+//            } else if (yValue < -SensorManager.STANDARD_GRAVITY) {
+//                mTvAcc.append("\n重力指向设备上边");
+//            } else if (zValue > SensorManager.STANDARD_GRAVITY) {
+//                mTvAcc.append("\n屏幕朝上");
+//            } else if (zValue < -SensorManager.STANDARD_GRAVITY) {
+//                mTvAcc.append("\n屏幕朝下");
+//            }
         }
     }
 
